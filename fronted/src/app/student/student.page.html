@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="closeModal()">
+        close
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{isUpdate ? 'Update' : 'Add'}} student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating">First name</ion-label>
+      <ion-input [(ngModel)]="data.first_name" name="first_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input [(ngModel)]="data.last_name" name="last_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input [(ngModel)]="data.address" name="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input [(ngModel)]="data.phone" name="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Class</ion-label>
+      <ion-input [(ngModel)]="data.class" name="class"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="ion-margin-top" fill="outline" expand="block">
+      {{isUpdate? 'Update': 'Save'}}
+    </ion-button >
+  </form>
+</ion-content>
